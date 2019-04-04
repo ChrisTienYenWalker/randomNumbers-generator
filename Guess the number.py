@@ -5,15 +5,20 @@ prizes = ['$1000 gift card', 'computer', 'iphone', 'furniture', 'painting', 'mac
 prizes2 = ['coffee', 'donut', '$100gift card', 'tablet', 'free drinks', 'free meal']
 prize = sample(prizes, 1)
 prize2 = sample(prizes2, 1)
-print(prize2)
 print('This is a guessing game and you need to guess a number between 1 and 100')
 
 question = input("Would you like to play? [y/n] ")
 
-if question != "y":
+if question == 'n':
     print('maybe next time')
 
-if question == 'y':
+
+if question != 'n' or 'y' or 'Y':
+    print('please retype awnser')
+    question = input("Would you like to play? [y/n] ")
+
+
+if question == 'y' or 'Y':
     guess = int(input('Guess number: '))
     if anwser < guess:
         print('Guess lower')
